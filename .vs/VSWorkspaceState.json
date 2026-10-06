@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\android",
+    "\\android\\app",
+    "\\android\\app\\src",
+    "\\android\\app\\src\\main",
+    "\\android\\app\\src\\main\\kotlin",
+    "\\lib",
+    "\\lib\\Services",
+    "\\lib\\Styles",
+    "\\lib\\Widgets"
+  ],
+  "SelectedNode": "\\.metadata",
+  "PreviewInSolutionExplorer": false
+}
