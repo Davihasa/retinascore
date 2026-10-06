@@ -119,7 +119,21 @@ class ClassifierModel {
         caminhoImagemMelhorada: null,
         qualidadeImagemMelhorada: null,
       );
-      if (tipoImagem != TipoImagem.noEye) {
+      if (tipoImagem == TipoImagem.olho) {
+        var inputTensor1 = await imageToTensor(entryImage);
+
+        var inputs = [inputTensor1];
+
+        var outputs = {
+          0: List.generate(1, (_) => List.filled(3, 0.0)),
+          1: List.generate(1, (_) => List.filled(1280, 0.0)),
+        };
+        qualityImageClassifier.runForMultipleInputs(inputs, outputs);
+
+        debugPrint(outputs.toString());
+        QualidadeImagem qualidadeImagem = avaliarImagem(outputs);
+        imageClassifyingResult.qualidadeImagem = qualidadeImagem;
+      } else if (tipoImagem != TipoImagem.noEye) {
         var inputTensor1 = await imageToTensor(entryImage);
 
         var inputs = [inputTensor1];
